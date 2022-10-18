@@ -44,7 +44,6 @@ def InputNumbers(inputText):
             print("Число должно быть integer ")
     return number
 
-
 def mult(n):
     if n == 1:
         return 1
@@ -59,3 +58,51 @@ for e in range(1, num + 1):
     list.append(mult(e))
 
 print(f"Произведения чисел от 1 до {num}:  {list}")
+
+Ex.3 """Задайте список из n чисел последовательности (1 + 1 / n) ** n и выведите на экран их сумму."""
+
+s = 0
+print(*(s := s + (1 + 1 / i) ** i for i in range(1, int(input('Number: ')) + 1)), sep='\r')
+
+# n = int(input('Number: '))
+# s = 0
+# for i in range(1, n + 1):
+#     s += (1 + 1 / i) ** i
+# print(s)
+
+Ex. 4 """Задайте список из N элементов, заполненных числами из промежутка [-N, N].
+ Найдите произведение элементов на указанных позициях.
+Позиции хранятся в файле file.txt в одной строке одно число."""
+
+import my_func
+
+n = my_func.input_int_number()
+list_rnd = my_func.random_list(-n, n, n)
+print('Random list: ', list_rnd)
+
+sum = 1
+new_list = []
+
+with open('file.txt', 'r') as file:
+    for line in file:
+        if -len(list_rnd) <= int(line) < len(list_rnd):
+            sum *= list_rnd[int(line)]
+            new_list.append(list_rnd[int(line)])
+
+print('New list: ', new_list)
+print('Sum new list = ', sum if sum != 1 else 'Значения не найдены')
+
+# n = int(input('Количество элементов: '))
+# lst_rnd = random.sample(range(-n, n), n)
+#
+# file = open('file.txt')
+# file = file.readlines()
+#
+# summa = 0
+# for i in range(len(file)):
+#     if int(file[i]) < len(lst_rnd):
+#         summa += lst_rnd[int(file[i])]
+#         n = 'ok'  # триггер указывает, что есть найденные значения (использую в if)
+#         lst_rnd[int(file[i])] = str(lst_rnd[int(file[i])])  # выделяю в списке '' найденные значения
+#                                                             # (исключительно для визуального удобства)
+# print(lst_rnd, '=', summa if n == 'ok' else 'Значения не найдены'
