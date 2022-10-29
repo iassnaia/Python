@@ -1,0 +1,84 @@
+Ex.1
+"Задайте список из нескольких чисел. Напишите программу,
+
+которая найдёт сумму элементов списка, стоящих на нечётной позиции."
+
+
+import my_func
+
+n = my_func.input_int_number('Input list lenght: ')
+list = my_func.random_list(n, 100)
+print(list)
+
+
+
+sum = 0
+print(*(sum := sum + (list[i]) for i in range(1, len(list), 2)), sep='\r')
+s = 0
+print(*(s := s + (list[i]) for i in range(1, len(list), 2)), sep='\r')
+
+
+
+# Через срез
+print('Sum odd numbers: ', sum((list[1:len(list):2])))
+
+Ex.2 "Напишите программу, которая найдёт произведение пар чисел списка.
+Парой считаем первый и последний элемент, второй и предпоследний и т.д."
+
+print(list)
+
+
+
+multiplication = []
+
+lenght = int(len(list) / 2) if
+len(list) % 2 == 0 
+else
+int(len(list) / 2 + 1)
+
+lenght = (n + 1) // 2
+for i in range(lenght):
+    multiplication.append(list[i] * 
+list[-i - 1])
+print(multiplication)
+
+Ex.3 "Напишите программу, которая найдёт произведение пар чисел списка. 
+Парой считаем первый и последний элемент, второй и предпоследний и т.д."
+
+Пример:
+
+- [2, 3, 4, 5, 6] => [12, 15, 16];
+- [2, 3, 5, 6] => [12, 15]
+
+list = my_func.random_list_float_numbers(n, 0, 10, 2)
+print(list)
+
+
+print('Max = ', round(max(i - int(i) for i in list), 2))  
+# print maximum fractional part
+print('Min = ', round(min(i - int(i) for i in list), 2))  
+# print minimum fractional part
+maximum = round(max(i - int(i) for i in list), 2)
+minimum = round(min(i - int(i) for i in list), 2)
+
+print('Max - Min = ', round(max(i - int(i) for i in list) - min(i - int(i) for i in list), 2))
+
+print(f'Max({maximum}) - Min({minimum}) = {round(maximum - minimum, 2)}')
+
+
+Ex.4 "Задайте список из вещественных чисел. Напишите программу, которая найдёт разницу
+ между максимальным и минимальным значением дробной части элементов."
+
+n = my_func.input_int_number('Input integer number: ')
+double = str()
+while n > 0:
+    
+double = double + str(n % 2)
+while n:
+    
+double = str(n % 2) + double
+    
+n = n // 2
+print('Binary number = ', double[::-1])
+
+print('Binary number = ', double)
