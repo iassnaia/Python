@@ -82,3 +82,20 @@ n = n // 2
 print('Binary number = ', double[::-1])
 
 print('Binary number = ', double)
+
+Ex.5 " Задайте число. Составьте список чисел Фибоначчи,
+ в том числе для отрицательных индексов."
+
+def generate_fib_list(n)
+    resulte = []
+    for i in range(n+1):
+        if i == 0:
+           resulte.append(i)
+        elif i == 1: 
+           resulte.append(i)
+           resulte.insert(0,i)
+        else:
+           fn = resulte[-2] + resulte[-1]
+           resulte.append(fn)
+           resulte.insert(0,((-1)**(i+1))*fn)
+      returne resulte
