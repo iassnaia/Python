@@ -54,5 +54,5 @@ Ex.2 "Дана последовательность чисел. Получить
 numbers = [1, 2, 3, 5, 1, 5, 3, 10]
 
 print('Уникальные:', list(i for i in numbers if numbers.count(i) <= 1))
-print('Пвторяющиеся:', list(set(i for i in numbers if numbers.count(i) > 1)))
+print('Повторяющиеся:', list(set(i for i in numbers if numbers.count(i) > 1)))
 print('Без дублей:', list(set(numbers)))
